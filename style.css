@@ -1,0 +1,54 @@
+body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    min-height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main{
+    background-color: green;
+    min-height: 600px;
+}
+
+.barraDiRicerca{
+    display: flex;
+    background-color: white;
+    border-radius: 3px;
+    align-items: center;
+}
+
+.informazioni{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    justify-content: space-between; 
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.utente{
+    position: relative;
+    display: flex;
+    background-color: crimson;
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+    text-align: left;
+    margin-top: -13px;
+}
+
+.gmail{
+    display: flex;
+    height: 50px;
+    width: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
