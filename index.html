@@ -19,7 +19,7 @@
                 
                 <div class="barraDiRicerca">
                     <i class="fa-solid fa-search" style="border: none; margin-top: 2px;"></i>
-                    <input type="search" placeholder="Cerca" style="height: 30px; width: 600px;border: none;">
+                    <input type="search" placeholder="Cerca" style="height: 30px; width: 480px;border: none;">
                     <i class="fa-solid fa-sliders" style="border: none; margin-top: 2px; margin-left: 5px;"></i>
                 </div>
 
@@ -36,7 +36,179 @@
         </header>
         <article>
             <div class="main">
-                <p>main</p>
+                <aside>
+                    <div class="MenuPricipale">
+                        <ul>
+                            <li>
+                                <div id="scrivi">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <h5 style="padding-left: 10px;">Scrivi</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-home-alt"></i>                                    
+                                    <h5 style="padding-left: 10px;">Posta in arrivo</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-star"></i>                                    
+                                    <h5 style="padding-left: 10px;">Speciali</h5>                  
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-clock"></i>                                            
+                                    <h5 style="padding-left: 10px;">Posticipati</h5>                              
+                                </div>                                
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <h5 style="padding-left: 10px;">Inviati</h5>  
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-book"></i>                                    
+                                    <h5 style="padding-left: 10px;">Bozze</h5>  
+                                </div>
+                            </li>
+                            <li>
+                                <!--fare v-if-->
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-arrow-down"></i> 
+                                    <h5 style="padding-left: 10px;">ALTRO</h5>
+                                </div>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <h5 style="padding-left: 10px;">Meno</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-star-half-alt"></i>
+                                    <h5 style="padding-left: 10px;">Importanti</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-message"></i>
+                                    <h5 style="padding-left: 10px;">Chat</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-user-clock"></i>
+                                    <h5 style="padding-left: 10px;">In programma</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-message"></i>
+                                    <h5 style="padding-left: 10px;">Tutti i messaggi</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-exclamation-triangle"></i>
+                                    <h5 style="padding-left: 10px;">Spam</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="iconeLaterali">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <h5 style="padding-left: 10px;">Cestino</h5>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                
+                <div class="ParteCentrale">
+                    <div class="topCentrale">
+                        <div style="display: flex; justify-content: space-between; width: 120px; margin-left: 5px;">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                        <div style="display: flex; align-items: baseline; justify-content: space-between; width: 220px; margin-right: 10px;">
+                            <h4>1-100</h4>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <p>It</p>
+                            <i class="fa-solid fa-arrow-down"></i> 
+                        </div>
+                    </div>
+
+                    <div class="navigatore">
+                        <div style="display: flex; flex-direction: row ;align-items: center; width: 110px;">
+                            <i class="fa-solid fa-house-user"></i>
+                            <div>
+                                <h4 style="margin-left: 10px;">Principale</h4>
+                                <hr class="lineaSezione" >
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row ; align-items: center; width: 110px; margin-left: 10px;">
+                            <i class="fa-solid fa-tag"></i>
+                            <div>
+                                <h4 style="margin-left: 10px;">Promozioni</h4>
+                                <hr class="lineaSezione" >
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row ; align-items: center; width: 110px; margin-left: 10px;">
+                            <i class="fa-solid fa-people-arrows"></i>
+                            <div>
+                                <h4 style="margin-left: 10px;">Social</h4>
+                                <hr class="lineaSezione" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="Mail">
+                            <div style="display: flex; align-items: baseline; margin-right: 50px;">
+                                <input type="checkbox">
+                                <i class="fa-solid fa-star" style="color: grey;"></i>
+                                <h3>Mail</h3>
+                            </div>
+                            <div>
+                                <h3>jhkucyhutyjkhgssqsqsuyiukhuiouhiuolkjhiojklughkgjkhjssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgkhjgui</h3>
+                            </div>
+                        </div>
+
+                        <div class="Mail">
+                            <div style="display: flex; align-items: baseline; margin-right: 50px;">
+                                <input type="checkbox">
+                                <i class="fa-solid fa-star" style="color: grey;"></i>
+                                <h3>Mail</h3>
+                            </div>
+                            <div>
+                                <h3>jhkucyhutyjkhgssqsqsuyiukhuiouhiuolkjhiojklughkgjkhjssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgkhjgui</h3>
+                            </div>
+                        </div>
+                    </div>             
+                </div>
+                <div style="margin-left: 15px;">
+                    <ul>
+                        <li style="margin-bottom: 30px;">
+                            <i class="fa-solid fa-calendar-days fa-lg"></i>
+                        </li>
+                        <li style="margin-bottom: 30px;">
+                            <i class="fa-solid fa-lightbulb fa-xl"></i>
+                        </li>
+                        <li style="margin-bottom: 30px;">
+                            <i class="fa-solid fa-check fa-lg"></i>
+                        </li>
+                        <li style="margin-bottom: 30px;">
+                            <i class="fa-solid fa-person fa-lg"></i>
+                        </li>
+                    </ul>
+                    <hr style="width: 40px; color: gray; margin-right: 20px;">
+                    <i class="fa-solid fa-plus fa-lg" style="margin-left: 10px;"></i>
+                </div>
             </div>
         </article>
     </div>
