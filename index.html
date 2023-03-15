@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gmail</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
@@ -13,13 +15,13 @@
         <header>
             <div class="header">
                 <div class="gmail">
-                    <i class="fa-solid fa-bars fa-xl"></i>
+                    <i class="fa-solid fa-bars fa-xl" v-on:click="burger()"></i>
                     <i class="fa-solid fa-mail-bulk fa-xl"></i>
                 </div>
                 
                 <div class="barraDiRicerca">
                     <i class="fa-solid fa-search" style="border: none; margin-top: 2px;"></i>
-                    <input type="search" placeholder="Cerca" style="height: 30px; width: 480px;border: none;">
+                    <input type="search" placeholder="Cerca" style="height: 30px; width: 480px;border: none; background-color: #eaf1fb;">
                     <i class="fa-solid fa-sliders" style="border: none; margin-top: 2px; margin-left: 5px;"></i>
                 </div>
 
@@ -46,82 +48,85 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="iconeLaterali">
+                                <div class="iconeLaterali" id="PostaInArrivo" v-on:mouseleave="leaveDiv('PostaInArrivo')" v-on:mouseover="OeverDiv('PostaInArrivo')">
                                     <i class="fa-solid fa-home-alt"></i>                                    
                                     <h5 style="padding-left: 10px;">Posta in arrivo</h5>
+                                    <h5 style="padding-left: 80px;">999</h5>
                                 </div>
                             </li>
                             <li>
-                                <div class="iconeLaterali">
+                                <div class="iconeLaterali" id="Speciali" v-on:mouseleave="leaveDiv('Speciali')" v-on:mouseover="OeverDiv('Speciali')">
                                     <i class="fa-solid fa-star"></i>                                    
                                     <h5 style="padding-left: 10px;">Speciali</h5>                  
                                 </div>
                             </li>
                             <li>
-                                <div class="iconeLaterali">
+                                <div class="iconeLaterali" id="Posticipati" v-on:mouseleave="leaveDiv('Posticipati')" v-on:mouseover="OeverDiv('Posticipati')">
                                     <i class="fa-solid fa-clock"></i>                                            
                                     <h5 style="padding-left: 10px;">Posticipati</h5>                              
                                 </div>                                
                             </li>
                             <li>
-                                <div class="iconeLaterali">
+                                <div class="iconeLaterali" id="Iviati" v-on:mouseleave="leaveDiv('Iviati')" v-on:mouseover="OeverDiv('Iviati')">
                                     <i class="fa-solid fa-paper-plane"></i>
                                     <h5 style="padding-left: 10px;">Inviati</h5>  
                                 </div>
                             </li>
                             <li>
-                                <div class="iconeLaterali">
+                                <div class="iconeLaterali" id="Bozze" v-on:mouseleave="leaveDiv('Bozze')" v-on:mouseover="OeverDiv('Bozze')">
                                     <i class="fa-solid fa-book"></i>                                    
                                     <h5 style="padding-left: 10px;">Bozze</h5>  
                                 </div>
                             </li>
                             <li>
                                 <!--fare v-if-->
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-arrow-down"></i> 
-                                    <h5 style="padding-left: 10px;">ALTRO</h5>
+                                <div class="iconeLaterali" v-if="!IconeLClick">
+                                    <i class="fa-solid fa-arrow-down" ></i> 
+                                    <h5 style="padding-left: 10px;" v-on:click="mostraIconeL()">ALTRO</h5>
                                 </div>
-                                <div class="iconeLaterali">
+                                <div class="iconeLaterali"  v-else>
                                     <i class="fa-solid fa-arrow-up"></i>
-                                    <h5 style="padding-left: 10px;">Meno</h5>
+                                    <h5 style="padding-left: 10px;" v-on:click="mostraIconeL()">Meno</h5>
                                 </div>
                             </li>
-                            <li>
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-star-half-alt"></i>
-                                    <h5 style="padding-left: 10px;">Importanti</h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-message"></i>
-                                    <h5 style="padding-left: 10px;">Chat</h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-user-clock"></i>
-                                    <h5 style="padding-left: 10px;">In programma</h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-message"></i>
-                                    <h5 style="padding-left: 10px;">Tutti i messaggi</h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-exclamation-triangle"></i>
-                                    <h5 style="padding-left: 10px;">Spam</h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="iconeLaterali">
-                                    <i class="fa-solid fa-trash"></i>
-                                    <h5 style="padding-left: 10px;">Cestino</h5>
-                                </div>
-                            </li>
+                            <span id="altro">
+                                <li>
+                                    <div class="iconeLaterali" id="Importanti" v-on:mouseleave="leaveDiv('Importanti')" v-on:mouseover="OeverDiv('Importanti')">
+                                        <i class="fa-solid fa-star-half-alt"></i>
+                                        <h5 style="padding-left: 10px;">Importanti</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="iconeLaterali" id="Chat" v-on:mouseleave="leaveDiv('Chat')" v-on:mouseover="OeverDiv('Chat')">
+                                        <i class="fa-solid fa-message"></i>
+                                        <h5 style="padding-left: 10px;">Chat</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="iconeLaterali" id="InProgrramma" v-on:mouseleave="leaveDiv('InProgrramma')" v-on:mouseover="OeverDiv('InProgrramma')">
+                                        <i class="fa-solid fa-user-clock"></i>
+                                        <h5 style="padding-left: 10px;">In programma</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="iconeLaterali" id="TuttiIMessaggi" v-on:mouseleave="leaveDiv('TuttiIMessaggi')" v-on:mouseover="OeverDiv('TuttiIMessaggi')">
+                                        <i class="fa-solid fa-message"></i>
+                                        <h5 style="padding-left: 10px;">Tutti i messaggi</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="iconeLaterali" id="Spam" v-on:mouseleave="leaveDiv('Spam')" v-on:mouseover="OeverDiv('Spam')">
+                                        <i class="fa-solid fa-exclamation-triangle"></i>
+                                        <h5 style="padding-left: 10px;">Spam</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="iconeLaterali" id="Cestino" v-on:mouseleave="leaveDiv('Cestino')" v-on:mouseover="OeverDiv('Cestino')">
+                                        <i class="fa-solid fa-trash"></i>
+                                        <h5 style="padding-left: 10px;">Cestino</h5>
+                                    </div>
+                                </li>
+                            </span>
                         </ul>
                     </div>
                 </aside>
@@ -175,7 +180,8 @@
                                 <h3>Mail</h3>
                             </div>
                             <div>
-                                <h3>jhkucyhutyjkhgssqsqsuyiukhuiouhiuolkjhiojklughkgjkhjssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgkhjgui</h3>
+                                <h3>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
+                                
                             </div>
                         </div>
 
@@ -186,11 +192,12 @@
                                 <h3>Mail</h3>
                             </div>
                             <div>
-                                <h3>jhkucyhutyjkhgssqsqsuyiukhuiouhiuolkjhiojklughkgjkhjssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssgkhjgui</h3>
+                                <h3>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
                             </div>
                         </div>
                     </div>             
                 </div>
+
                 <div style="margin-left: 15px;">
                     <ul>
                         <li style="margin-bottom: 30px;">
@@ -213,4 +220,6 @@
         </article>
     </div>
 </body>
+<!-------------------------------------------------------------------------------------->
+<script type="text/javascript" src="app.js"></script>
 </html>

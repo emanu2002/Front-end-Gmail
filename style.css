@@ -2,14 +2,14 @@ body{
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background-color: lightgray;
+    background-color: #f6f8fc;
 
 }
 
 .header{
     display: flex;
     flex-direction: row;
-    background-color: lightgray;
+    background-color: #f6f8fc;
     min-height: 60px;
     align-items: center;
     justify-content: space-between;
@@ -17,7 +17,7 @@ body{
 
 .barraDiRicerca{
     display: flex;
-    background-color: white;
+    background-color: #eaf1fb;
     border-radius: 3px;
     align-items: center;
 }
@@ -51,16 +51,16 @@ body{
 }
 
 .main{
-    background-color: lightgray;
+    background-color: #f6f8fc;
     min-height: 600px;
     display: grid;
-    grid-template-columns: 2fr 15fr 1fr;
+    grid-template-columns: 4fr 15fr 1fr;
 }
 
 .MenuPricipale{
     display: inline-flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: #f6f8fc;
     height: 600px;
     width: 100%;    
     overflow: auto; 
@@ -70,9 +70,10 @@ body{
     display: flex;
     width: 100px;
     height: 50px;
-    background-color: lightblue;
+    background-color: #c2e7ff;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -81,9 +82,18 @@ ul {
     margin-left: 5px;       
 }
 
+li{
+    margin-bottom: -15px;
+}
+
 .iconeLaterali{
     display: flex; 
     align-items: baseline;
+    background-color: #f6f8fc;
+    border-radius: 10px;
+    height: 50px;
+    width: 250px;
+    padding-left: 10px;
 }
 
 .ParteCentrale{
@@ -92,7 +102,7 @@ ul {
     width: 100%;    
     overflow-y: auto;
     overflow-x: hidden;
-    
+    border-radius: 15px;
 }
 
 .topCentrale{
@@ -114,7 +124,9 @@ ul {
 .lineaSezione{
     margin-top: -18px; 
     width: 80px; 
+    height: 3px;
     margin-left: 0;
+    background-color: #0b57d0;
 }
 
 .Mail{
