@@ -3,7 +3,9 @@ var app = new Vue({
     data:{
         burgetClick : false,
         IconeLClick : true,
-        PaginaCorrente:"Principale"
+        PaginaCorrente:"Principale",
+        ScriviMail:false,
+        mails: [{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},]
     },
     methods:{
         burger:function(){

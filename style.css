@@ -3,7 +3,6 @@ body{
     width: 100%;
     overflow: hidden;
     background-color: #f6f8fc;
-
 }
 
 .header{
@@ -139,11 +138,14 @@ li{
 }
 
 .BoxScriviMail{
+    background-color: white;
     position: absolute;
     top:50%;
     left: 70%;
     z-index: 1; /* serve per mettere ad un livello superiore*/
     border-color: black;
-    border: solid 1px;
+    border: solid 2px;
     border-radius: 5px;
+    width: 340px;
+    height: 400px;
 }

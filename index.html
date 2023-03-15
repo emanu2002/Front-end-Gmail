@@ -42,7 +42,7 @@
                     <div class="MenuPricipale">
                         <ul>
                             <li>
-                                <div id="scrivi">
+                                <div id="scrivi" v-on:click="ScriviMail = !ScriviMail">
                                     <i class="fa-solid fa-pen"></i>
                                     <h5 style="padding-left: 10px;">Scrivi</h5>
                                 </div>
@@ -173,65 +173,50 @@
                     </div>
 
                     <div class="box">
-                        <div class="Mail">
+                        <div class="Mail" v-for="(mail,index) in mails">
                             <div style="display: flex; align-items: baseline; margin-right: 50px;">
                                 <input type="checkbox">
-                                <i class="fa-solid fa-star" style="color: grey;"></i>
-                                <h3>Mail</h3>
+                                <i class="fa-solid fa-star" style="color: grey; margin-left: 10px; margin-right: 10px;"></i>
+                                <h3>{{mail.Oggetto}}</h3>
                             </div>
                             <div>
-                                <h3>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
-                                
-                            </div>
-                        </div>
-
-                        <div class="Mail">
-                            <div style="display: flex; align-items: baseline; margin-right: 50px;">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-star" style="color: grey;"></i>
-                                <h3>Mail</h3>
-                            </div>
-                            <div>
-                                <h3>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
-                            </div>
-                        </div>
-                        
-                        <div class="Mail">
-                            <div style="display: flex; align-items: baseline; margin-right: 50px;">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-star" style="color: grey;"></i>
-                                <h3>Mail</h3>
-                            </div>
-                            <div>
-                                <h3>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
-                            </div>
-                        </div>
-                        <div class="Mail">
-                            <div style="display: flex; align-items: baseline; margin-right: 50px;">
-                                <input type="checkbox">
-                                <i class="fa-solid fa-star" style="color: grey;"></i>
-                                <h3>Mail</h3>
-                            </div>
-                            <div>
-                                <h3>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
+                                <h3 style="margin-right: 10px;">{{mail.Corpo}}</h3>                              
                             </div>
                         </div>
                     </div>  
                     
-                    <div class="BoxScriviMail">
-                        <p>Nuovo messaggio</p>
+                    <div class="BoxScriviMail" v-if="ScriviMail">
+                        <div style="border: solid 1px;height: 35px; background-color: #f6f8fc;">
+                            <h4 style="position: absolute; top: -10px; left: 10px;">Nuovo messaggio</h4>
+                            <i class="fa-solid fa-close" style="position: absolute; top: 10px;left: 320px;" v-on:click="ScriviMail = !ScriviMail"></i>
+                        </div>
                         <form action="">
-                            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;">
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;  margin-top: -20px; margin-bottom: -15px;">
                                 <h5>A</h5>
-                                <input type="text" id="Atxt" placeholder="Destinatari" style="height: 10px; width: 130px;">
+                                <input type="text" id="Atxt" placeholder="Destinatari" style="height: 13px; width: 230px; border: none;">
                                 <p>Cc</p>
                                 <p>Ccn</p>
                             </div>
-                            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;">
-                                <input type="text" id="Oggettotxt" placeholder="Oggetto" style="height: 10px; width: 130px;">
+                            <hr>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; border: none;">
+                                <input type="text" id="Oggettotxt" placeholder="Oggetto" style="height: 15px; width: 100%; margin-top: -8px;margin-bottom: 3px; border: none;">
                             </div>
-                            <div style="height: 200px; width: 300px; background-color: red; overflow: auto;">
-                                <textarea id="corpoMessaggio" style="height: 100%; width: 98%;"></textarea>
+                            <div>
+                                <textarea id="corpoMessaggio" style="height: 200px; width: 98.5%;"></textarea>
+
+                                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                                    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 230px;">
+                                        <input type="submit" value="Invia" style="background-color: blueviolet; border-radius: 40px;">
+                                        <i class="fa-solid fa-a" v-on:mouseover=""></i>
+                                        <i class="fa-solid fa-plus" v-on:mouseover=""></i>
+                                        <i class="fa-solid fa-face-smile"></i>
+                                        <i class="fa-brands fa-google-drive"></i>
+                                        <i class="fa-solid fa-photo-film"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
                             </div>
                         </form>
                     </div>
