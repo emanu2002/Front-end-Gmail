@@ -5,7 +5,9 @@ var app = new Vue({
         IconeLClick : true,
         PaginaCorrente:"Principale",
         ScriviMail:false,
-        mails: [{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},]
+        mails: [{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"},{"Oggetto":"Oggetto","Corpo":"Corpo della Mail ricevuta, Buongiorno questa è una mail di prova"}],
+        isCheckAll:false,
+        k:0
     },
     methods:{
         burger:function(){
@@ -72,6 +74,42 @@ var app = new Vue({
                 document.querySelector("#"+pagina+">div>hr").style.height="3px";
             }
             self.PaginaCorrente=pagina
+        },
+        checked: function(){
+            var self=this;
+            var checkBox =document.querySelectorAll('.check');
+            if(self.isCheckAll){
+                for(var i=0;i<checkBox.length;i++){
+                    document.querySelectorAll('.check')[i].checked  = false;
+                }
+                self.isCheckAll = !self.isCheckAll;
+            }else{
+                for(var i=0;i<checkBox.length;i++){
+                    document.querySelectorAll('.check')[i].checked  = true;
+                }
+                self.isCheckAll = !self.isCheckAll;
+            }
+        },
+        checkMail: function(indice){
+            var self = this;
+            var checkBox = document.querySelectorAll('.check');
+            var flag=false;
+            for(var i=0;i<checkBox.length;i++){
+                if(document.querySelectorAll('.check')[i].checked){                    
+                    self.k++;
+                    flag = true;
+                }
+            }
+            console.log(self.k);
+            
+            if(self.k==1){                
+                self.isCheckAll = !self.isCheckAll;
+                self.k--; //serve nel caso clicco solo 1 check
+            }
+            if(!flag){
+                self.k=0;
+                self.isCheckAll = !self.isCheckAll;
+            }            
         }
     },
     mounted() {

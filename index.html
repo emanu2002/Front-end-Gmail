@@ -82,7 +82,7 @@
                                 <!--fare v-if-->
                                 <div class="iconeLaterali" v-if="!IconeLClick" v-on:click="mostraIconeL()">
                                     <i class="fa-solid fa-arrow-down" ></i> 
-                                    <h5 style="padding-left: 10px;" >ALTRO</h5>
+                                    <h5 style="padding-left: 10px;" >Altro</h5>
                                 </div>
                                 <div class="iconeLaterali" v-on:click="mostraIconeL()" v-else>
                                     <i class="fa-solid fa-arrow-up"></i>
@@ -133,11 +133,17 @@
                 
                 <div class="ParteCentrale">
                     <div class="topCentrale">
-                        <div style="display: flex; justify-content: space-between; width: 120px; margin-left: 5px;">
-                            <input type="checkbox">
-                            <i class="fa-solid fa-rotate-right"></i>
+                        <div style="display: flex; justify-content: space-between; width: 180px; margin-left: 5px;">
+                            <input type="checkbox" id="checkAll" v-on:click="checked()">
+                            <div v-if="isCheckAll" style="display: flex; flex-direction: row;">
+                                <i class="fa-solid fa-exclamation-triangle" style="margin-left: 30px;"></i>
+                                <i class="fa-solid fa-trash" style="margin-left: 30px; margin-right: 45px;"></i>
+                                <i class="fa-solid fa-clock" style="margin-right: 45px;"></i>
+                            </div>
+                            <i class="fa-solid fa-rotate-right" v-else></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </div>
+                            <i class="fa-solid fa-right-left" v-if="isCheckAll" style="margin-left: 45px;"></i>
+                        </div>                        
 
                         <div style="display: flex; align-items: baseline; justify-content: space-between; width: 220px; margin-right: 10px;">
                             <h4>1-100</h4>
@@ -175,7 +181,7 @@
                     <div class="box">
                         <div class="Mail" v-for="(mail,index) in mails">
                             <div style="display: flex; align-items: baseline; margin-right: 50px;">
-                                <input type="checkbox">
+                                <input type="checkbox" v-bind:id="`${index}`" class="check" v-on:click="checkMail(index)">
                                 <i class="fa-solid fa-star" style="color: grey; margin-left: 10px; margin-right: 10px;"></i>
                                 <h3>{{mail.Oggetto}}</h3>
                             </div>

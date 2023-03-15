@@ -79,12 +79,11 @@ body{
 ul {
     list-style-type: none; 
     padding-left: 5px;       
-    margin-left: 5px;       
+    margin-left: 5px;  
+    line-height: 1px;     
 }
 
-li{
-    margin-bottom: -15px;
-}
+
 
 .iconeLaterali{
     display: flex; 
