@@ -80,13 +80,13 @@
                             </li>
                             <li>
                                 <!--fare v-if-->
-                                <div class="iconeLaterali" v-if="!IconeLClick">
+                                <div class="iconeLaterali" v-if="!IconeLClick" v-on:click="mostraIconeL()">
                                     <i class="fa-solid fa-arrow-down" ></i> 
-                                    <h5 style="padding-left: 10px;" v-on:click="mostraIconeL()">ALTRO</h5>
+                                    <h5 style="padding-left: 10px;" >ALTRO</h5>
                                 </div>
-                                <div class="iconeLaterali"  v-else>
+                                <div class="iconeLaterali" v-on:click="mostraIconeL()" v-else>
                                     <i class="fa-solid fa-arrow-up"></i>
-                                    <h5 style="padding-left: 10px;" v-on:click="mostraIconeL()">Meno</h5>
+                                    <h5 style="padding-left: 10px;" >Meno</h5>
                                 </div>
                             </li>
                             <span id="altro">
@@ -149,21 +149,21 @@
                     </div>
 
                     <div class="navigatore">
-                        <div style="display: flex; flex-direction: row ;align-items: center; width: 110px;">
+                        <div style="display: flex; flex-direction: row ;align-items: center; width: 110px;" id="Principale" v-on:mouseleave="leaveDiv('Principale')" v-on:mouseover="OeverDiv('Principale')" v-on:click="PaginaDaVisulizzare('Principale')">
                             <i class="fa-solid fa-house-user"></i>
                             <div>
                                 <h4 style="margin-left: 10px;">Principale</h4>
                                 <hr class="lineaSezione" >
                             </div>
                         </div>
-                        <div style="display: flex; flex-direction: row ; align-items: center; width: 110px; margin-left: 10px;">
+                        <div style="display: flex; flex-direction: row ; align-items: center; width: 110px; margin-left: 10px;" id="Promozioni" v-on:mouseleave="leaveDiv('Promozioni')" v-on:mouseover="OeverDiv('Promozioni')" v-on:click="PaginaDaVisulizzare('Promozioni')">
                             <i class="fa-solid fa-tag"></i>
                             <div>
                                 <h4 style="margin-left: 10px;">Promozioni</h4>
-                                <hr class="lineaSezione" >
+                                <hr class="lineaSezione">
                             </div>
                         </div>
-                        <div style="display: flex; flex-direction: row ; align-items: center; width: 110px; margin-left: 10px;">
+                        <div style="display: flex; flex-direction: row ; align-items: center; width: 110px; margin-left: 10px;" id="Social" v-on:mouseleave="leaveDiv('Social')" v-on:mouseover="OeverDiv('Social')" v-on:click="PaginaDaVisulizzare('Social')">
                             <i class="fa-solid fa-people-arrows"></i>
                             <div>
                                 <h4 style="margin-left: 10px;">Social</h4>

@@ -2,7 +2,8 @@ var app = new Vue({
     el: '#spa',
     data:{
         burgetClick : false,
-        IconeLClick : true
+        IconeLClick : true,
+        PaginaCorrente:"Principale"
     },
     methods:{
         burger:function(){
@@ -50,14 +51,29 @@ var app = new Vue({
             }
         },
         leaveDiv: function(id){
-            document.getElementById(id).style.backgroundColor="#f6f8fc";
+            if(id === "Social" || id === "Promozioni" || id === "Principale"){
+            document.getElementById(id).style.backgroundColor="white";
+            }else{
+                document.getElementById(id).style.backgroundColor="#f6f8fc";
+            }
+
         },
         OeverDiv: function(id){
             document.getElementById(id).style.backgroundColor="#d3e3fd";
+        },
+        PaginaDaVisulizzare: function(pagina){
+            var self=this;
+            document.querySelector("#"+self.PaginaCorrente+">div>hr").style.backgroundColor="white";
+            document.querySelector("#"+self.PaginaCorrente+">div>hr").style.height="0";
+            if(pagina === "Social" || pagina === "Promozioni" || pagina === "Principale"){
+                document.querySelector("#"+pagina+">div>hr").style.backgroundColor="blue";
+                document.querySelector("#"+pagina+">div>hr").style.height="3px";
+            }
+            self.PaginaCorrente=pagina
         }
     },
     mounted() {
         console.log("inizio");
-        
+        this.PaginaDaVisulizzare("Principale");
     }
 });
